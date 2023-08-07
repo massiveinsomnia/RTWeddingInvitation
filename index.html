@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wedding Invitation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sacramento&family=Work+Sans:wght@100;300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="countdown/simplyCountdown.theme.default.css" />
+    <script src="countdown/simplyCountdown.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section id="hero"
+        class="hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white">
+        <main>
+            <h1>Robb Stark & Talisa Stark</h1>
+            <h4>Invite you to join their wedding celebration on :</h4>
+            <div class="simply-countdown"></div>
+            <a href="#undangan" class="btn btn-lg mt-4">Show Invitation</a>
+        </main>
+    </section>
+
+    <nav class="navbar navbar-expand-md sticky-top custom-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#">The Red Wedding</a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">The Red Wedding</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div class="navbar-nav ms-auto">
+                        <a class="nav-link" href="#home">Home</a>
+                        <a class="nav-link" href="#info">Info</a>
+                        <a class="nav-link" href="#story">Story</a>
+                        <a class="nav-link" href="#gallery">Gallery</a>
+                        <a class="nav-link" href="#rsvp">RSVP</a>
+                        <a class="nav-link" href="#gifts">Gifts</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="home">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                    <h2>Weddings</h2>
+                    <h3>Held on 02 Jun 2024, Twins, Riverlands</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci voluptates eligendi itaque ab
+                        quod quos consectetur blanditiis nemo dolores assumenda exercitationem eveniet asperiores amet,
+                        odio laudantium nesciunt nobis eius repudiandae. Sit sequi beatae necessitatibus, ea, eius quod
+                        tenetur est accusamus quidem sunt a provident expedita reiciendis dolorum magnam quas itaque?
+                    </p>
+                </div>
+            </div>
+
+            <div class="row couple">
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-8 text-end">
+                            <h3>Robb Stark</h3>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus laboriosam
+                                praesentium blanditiis magni deserunt aliquam consequatur dolor eaque similique
+                                doloribus.</p>
+                        </div>
+                        <div class="col-4">
+                            <img src="images/robb.jpg" alt="Robb Stark" class="img-responsive rounded-circle">
+                        </div>
+                    </div>
+                </div>
+
+                <span class="heart"><i class="bi bi-heart-fill"></i></span>
+
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-4">
+                            <img src="images/talisa.jpg" alt="Talisa Stark" class="img-responsive rounded-circle">
+                        </div>
+                        <div class="col-8">
+                            <h3>Talisa Stark</h3>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus laboriosam
+                                praesentium blanditiis magni deserunt aliquam consequatur dolor eaque similique
+                                doloribus.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="info" class="info">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-10 text-center">
+                    <h2>Wedding Information</h2>
+                    <p class="alamat">Address : House of Freys, Riverlands</p>
+                    <a href="https://goo.gl/maps/GM2UzR2mDXxuDKvj8" target="_blank"
+                        class="btn btn-light btn-sm my-4">This
+                        link will guide you</a>
+                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro libero
+                        commodi, accusamus itaque dolorum, quod nostrum officiis necessitatibus vero minima hic beatae.
+                        Nesciunt eius consequuntur, omnis quos beatae eos cumque fugit harum nobis. Odio officia,
+                        veritatis autem culpa eius fuga quas beatae aliquam eveniet, corrupti nihil a pariatur itaque
+                        aliquid?</p>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-md-5 col-10">
+                    <div class="card text-center text-bg-light mb-5">
+                        <div class="card-header">
+                            Marriage Ceremony
+                        </div>
+                        <div class="card-body">
+                            <div class="row justify-content-center">
+                                <div class="col-md-6">
+                                    <i class="bi bi-clock d-block"></i>
+                                    <span>21:00 - End</span>
+                                </div>
+                                <div class="col-md-6">
+                                    <i class="bi bi-calendar3 d-block"></i>
+                                    <span>Sunday, 02 Jun 2024</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            No weapon allowed
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-5 col-10">
+                    <div class="card text-center text-bg-light">
+                        <div class="card-header">
+                            Marriage Ceremony
+                        </div>
+                        <div class="card-body">
+                            <div class="row justify-content-center">
+                                <div class="col-md-6">
+                                    <i class="bi bi-clock d-block"></i>
+                                    <span>21:00 - End</span>
+                                </div>
+                                <div class="col-md-6">
+                                    <i class="bi bi-calendar3 d-block"></i>
+                                    <span>Sunday, 02 Jun 2024</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            No weapon allowed
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="story" class="story">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 md-10 text-center">
+                    <span>The Journey</span>
+                    <h2>Timeline</h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non praesentium officia reiciendis
+                        fugit veritatis voluptatum!</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <ul class="timeline">
+                        <li>
+                            <div class="timeline-image" style="background-image: url(images/path-1.jpeg);"></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h3>First Met</h3>
+                                    <span>02 Jun 2023</span>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed incidunt quod,
+                                        aspernatur ipsum quaerat alias?</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-inverted">
+                            <div class="timeline-image" style="background-image: url(images/path-2.jpg);"></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h3>The next big step</h3>
+                                    <span>02 Jun 2023</span>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed incidunt quod,
+                                        aspernatur ipsum quaerat alias?</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="timeline-image" style="background-image: url(images/path-3.jpg);"></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h3>The Red Wedding</h3>
+                                    <span>02 Jun 2023</span>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed incidunt quod,
+                                        aspernatur ipsum quaerat alias?</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 md-10 text-center">
+                    <span>Memories</span>
+                    <h2>The gallery</h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla, repudiandae quo! Eligendi sed
+                        soluta quas maxime sint et delectus omnis!</p>
+                </div>
+            </div>
+
+            <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1 justify-content-center">
+                <div class="col mt-3">
+                    <a href="images/gallery/gallery1.jpg" data-toggle="lightbox" data-gallery="got-gallery"
+                        data-caption="Best Character">
+                        <img src="images/gallery/thumbnail/thumbnail1.jpg" alt="Memories"
+                            class="img-fluid w-100 rounded"></img>
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="images/gallery/gallery2.jpg" data-toggle="lightbox" data-gallery="got-gallery"
+                        data-caption="Also one of the best character">
+                        <img src="images/gallery/thumbnail/thumbnail2.jpg" alt="Memories"
+                            class="img-fluid w-100 rounded"></img>
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="images/gallery/gallery3.jpg" data-toggle="lightbox" data-gallery="got-gallery"
+                        data-caption="The spark of the show">
+                        <img src="images/gallery/thumbnail/thumbnail3.jpg" alt="Memories"
+                            class="img-fluid w-100 rounded"></img>
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="images/gallery/gallery4.jpg" data-toggle="lightbox" data-gallery="got-gallery"
+                        data-caption="Khaleesi">
+                        <img src="images/gallery/thumbnail/thumbnail4.jpg" alt="Memories"
+                            class="img-fluid w-100 rounded"></img>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOOTSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+
+    <!-- LIGHTBOX -->
+    <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.js"></script>
+
+    <!-- https://github.com/VincentLoy/simplyCountdown.js -->
+    <script>
+        simplyCountdown('.simply-countdown', {
+            year: 2024, // required
+            month: 6, // required
+            day: 2, // required
+            hours: 21, // Default is 0 [0-23] integer
+            minutes: 0, // Default is 0 [0-59] integer
+            seconds: 0, // Default is 0 [0-59] integer
+            words: { //words displayed into the countdown
+                days: { singular: 'day', plural: 'days' },
+                hours: { singular: 'hour', plural: 'hours' },
+                minutes: { singular: 'minute', plural: 'minutes' },
+                seconds: { singular: 'second', plural: 'seconds' }
+            },
+            plural: true, //use plurals
+            inline: false, //set to true to get an inline basic countdown like : 24 days, 4 hours, 2 minutes, 5 seconds
+            inlineClass: 'simply-countdown-inline', //inline css span class in case of inline = true
+            // in case of inline set to false
+            enableUtc: false, //Use UTC or not - default : false
+            onEnd: function () { return; }, //Callback on countdown end, put your own function here
+            refresh: 1000, // default refresh every 1s
+            sectionClass: 'simply-section', //section css class
+            amountClass: 'simply-amount', // amount css class
+            wordClass: 'simply-word', // word css class
+            zeroPad: false,
+            countUp: false
+        })
+    </script>
+
+    <script>
+        const hamburger = document.querySelector('.navbar-toggler');
+        const stickyTop = document.querySelector('.sticky-top');
+        const offCanvas = document.querySelector('.offcanvas');
+
+        hamburger.addEventListener('click', function () {
+            stickyTop.style.overflow = 'visible';
+        })
+
+        offCanvas.addEventListener('hidden.bs.offcanvas', function () {
+            stickyTop.style.overflow = 'hidden';
+        })
+    </script>
+</body>
+
+</html>

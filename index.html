@@ -25,7 +25,7 @@
             <h1>Robb Stark & Talisa Stark</h1>
             <h4>Invite you to join their wedding celebration on :</h4>
             <div class="simply-countdown"></div>
-            <a href="#undangan" class="btn btn-lg mt-4">Show Invitation</a>
+            <a href="#home" class="btn btn-lg mt-4" onClick="enableScroll()">Show Invitation</a>
         </main>
     </section>
 
@@ -174,7 +174,7 @@
     <section id="story" class="story">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-md-8 md-10 text-center">
+                <div class="col-md-8 col-10 text-center">
                     <span>The Journey</span>
                     <h2>Timeline</h2>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non praesentium officia reiciendis
@@ -233,7 +233,7 @@
     <section id="gallery" class="gallery">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-md-8 md-10 text-center">
+                <div class="col-md-8 col-10 text-center">
                     <span>Memories</span>
                     <h2>The gallery</h2>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla, repudiandae quo! Eligendi sed
@@ -273,6 +273,108 @@
             </div>
         </div>
     </section>
+
+    <section id="rsvp" class="rsvp">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-10 text-center">
+                    <h2>Répondez s'il vous plaît</h2>
+                    <p>Respond, if you please</p>
+                </div>
+            </div>
+            <form class="row row-cols-md-auto g-3 align-items-center justify-content-center" method="POST"
+                action="https://script.google.com/macros/s/AKfycbwd5zvWhtasA6gGOjwsr4ZDvCdAcPnPkgI7appjbqIgHxI6otGItCBra7RdqkPQMCDVWg/exec"
+                id="my-form">
+                <div class="col-12">
+                    <div class="mb-3">
+                        <label for="nama" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="nama" name="nama">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="mb-3">
+                        <label for="jumlah" class="form-label">Person</label>
+                        <input type="number" class="form-control" id="jumlah" name="jumlah" min="1" max="5" length="1"
+                            value="1">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="mb-3">
+                        <label for="status" class="form-label">Confirmation</label>
+                        <select name="status" id="status" class="form-select">
+                            <option selected> - Pick Any - </option>
+                            <option value="Hadir">Available</option>
+                            <option value="Tidak Hadir">Not Available</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-12" style="margin-top: 35px;">
+                    <button type="submit" class="btn btn-primary">Send</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section id="gifts" class="gifts">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-10 text-center">
+                    <h2>Gifts</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas exercitationem blanditiis enim et
+                        nemo velit ea quidem quam ex sapiente?</p>
+                </div>
+            </div>
+            <div class="row justify-content-center text-center">
+                <div class="col-md-6">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <div class="fw-bold">BCA</div>
+                            746390181 - Robb Stark
+                        </li>
+                        <li class="list-group-item">
+                            <div class="fw-bold">BCA</div>
+                            746390181 - Walder Frey
+                        </li>
+                        <li class="list-group-item">
+                            <div class="fw-bold">BCA</div>
+                            746390181 - Kal Drogo
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <small class="block">&copy; 2023 Robb Stark and Talisa Stark Red Wedding. All Rights
+                        Reserved.</small>
+                    <small class="block">Powered by <a href="https://github.com/massiveinsomnia/"
+                            target="_blank">@MassiveInsomnia</a></small>
+
+                    <ul class="mt-3">
+                        <li>
+                            <a href="#"><i class="bi bi-instagram"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="bi bi-youtube"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="bi bi-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="bi bi-facebook"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="bi bi-tiktok"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <!-- BOOTSTRAP -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
@@ -324,6 +426,49 @@
         offCanvas.addEventListener('hidden.bs.offcanvas', function () {
             stickyTop.style.overflow = 'hidden';
         })
+    </script>
+
+    <script>
+        const rootElement = document.querySelector(":root");
+        function disableScroll() {
+            scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+            window.onscroll = function () {
+                window.scrollTo(scrollTop, scrollLeft);
+            }
+
+            rootElement.style.scrollBehavior = 'auto';
+        }
+
+        function enableScroll() {
+            window.onscroll = function () { }
+            rootElement.style.scrollBehavior = 'smooth';
+            localStorage.setItem('opened', 'true');
+        }
+
+        if (!localStorage.getItem('opened')) {
+            disableScroll();
+        }
+    </script>
+
+    <script>
+        window.addEventListener("load", function () {
+            const form = document.getElementById("my-form");
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+                const data = new FormData(form);
+                const action = e.target.action;
+
+                fetch(action, {
+                    method: 'POST',
+                    body: data,
+                })
+                    .then(() => {
+                        alert("Thank you for your kind response");
+                    })
+            });
+        });
     </script>
 </body>
 

@@ -23,7 +23,7 @@
         class="hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white">
         <main>
             <h1>Robb Stark & Talisa Stark</h1>
-            <h4>Invite you to join their wedding celebration on :</h4>
+            <h4>Invite you <span></span> to join their wedding celebration on :</h4>
             <div class="simply-countdown"></div>
             <a href="#home" class="btn btn-lg mt-4" onClick="enableScroll()">Show Invitation</a>
         </main>
@@ -282,9 +282,8 @@
                     <p>Respond, if you please</p>
                 </div>
             </div>
-            <form class="row row-cols-md-auto g-3 align-items-center justify-content-center" method="POST"
-                action="https://script.google.com/macros/s/AKfycbwd5zvWhtasA6gGOjwsr4ZDvCdAcPnPkgI7appjbqIgHxI6otGItCBra7RdqkPQMCDVWg/exec"
-                id="my-form">
+            <form class="row row-cols-md-auto g-3 align-items-center justify-content-center" method="POST" action=""
+                id="my-form" name="my-form">
                 <div class="col-12">
                     <div class="mb-3">
                         <label for="nama" class="form-label">Name</label>
@@ -309,9 +308,33 @@
                     </div>
                 </div>
                 <div class="col-12" style="margin-top: 35px;">
-                    <button type="submit" class="btn btn-primary">Send</button>
+                    <button class="btn btn-primary">Send</button>
                 </div>
             </form>
+            <div class="row justify-content-center mt-5">
+                <div class="col-md-6">
+                    <div id="disqus_thread"></div>
+                    <script>
+                        /**
+                        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+                        /*
+                        var disqus_config = function () {
+                        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                        };
+                        */
+                        (function () { // DON'T EDIT BELOW THIS LINE
+                            var d = document, s = d.createElement('script');
+                            s.src = 'https://the-red-wedding.disqus.com/embed.js';
+                            s.setAttribute('data-timestamp', +new Date());
+                            (d.head || d.body).appendChild(s);
+                        })();
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments
+                            powered by Disqus.</a></noscript>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -379,6 +402,16 @@
         </div>
     </footer>
 
+    <div id="audio-container">
+        <audio id="song" autoplay loop>
+            <source src="audio/save-and-sound.mp4" type="audio/mp4">
+        </audio>
+
+        <div class="audio-icon-wrapper" style="display: none;">
+            <i class="bi bi-disc"></i>
+        </div>
+    </div>
+
     <!-- BOOTSTRAP -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
@@ -433,6 +466,11 @@
 
     <script>
         const rootElement = document.querySelector(":root");
+        const audioIconWrapper = document.querySelector('.audio-icon-wrapper');
+        const audioIcon = document.querySelector('.audio-icon-wrapper i');
+        const song = document.querySelector('#song');
+        let isPlaying = false;
+
         function disableScroll() {
             scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
@@ -447,21 +485,50 @@
         function enableScroll() {
             window.onscroll = function () { }
             rootElement.style.scrollBehavior = 'smooth';
-            localStorage.setItem('opened', 'true');
+            // set flag udah pernah buka undangan atau belum
+            // localStorage.setItem('opened', 'true');
+            playAudio();
         }
 
-        if (!localStorage.getItem('opened')) {
-            disableScroll();
+        function playAudio() {
+            song.volume = 0.1;
+            audioIconWrapper.style.display = 'flex';
+            song.play();
+            isPlaying = true;
         }
+
+        audioIconWrapper.onclick = function () {
+            if (isPlaying) {
+                song.pause();
+                audioIcon.classList.remove('bi-disc');
+                audioIcon.classList.add('bi-pause-circle');
+            } else {
+                song.play();
+                audioIcon.classList.add('bi-disc');
+                audioIcon.classList.remove('bi-pause-circle');
+            }
+
+            isPlaying = !isPlaying;
+        }
+
+        // if (!localStorage.getItem('opened')) {
+        //     disableScroll();
+        // }
+
+        disableScroll();
     </script>
 
-    <script>
+    <!-- Untuk yang sudah ada domain, action form nya harus diisi web page url nya juga (isi script URL ke isi action dalam form nya) -->
+    <!-- <script>
         window.addEventListener("load", function () {
             const form = document.getElementById("my-form");
             form.addEventListener("submit", function (e) {
                 e.preventDefault();
                 const data = new FormData(form);
                 const action = e.target.action;
+
+                alert(data.get("nama"));
+                alert(data.get("jumlah"));
 
                 fetch(action, {
                     method: 'POST',
@@ -472,6 +539,40 @@
                     })
             });
         });
+    </script> -->
+
+    <!-- Untuk local -->
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwd5zvWhtasA6gGOjwsr4ZDvCdAcPnPkgI7appjbqIgHxI6otGItCBra7RdqkPQMCDVWg/exec'
+        const form = document.forms['my-form'];
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            fetch(scriptURL, {
+                method: 'POST',
+                body: new FormData(form)
+            })
+                .then((response) => {
+                    alert("Thank you for your kind response");
+                })
+                .then(() => {
+                    window.location.reload();
+                })
+                .catch((error) => {
+                    console.error('Error!', error.message);
+                })
+        })
+    </script>
+
+    <script>
+        // contoh url buat nampilin pronoun dan nama http://127.0.0.1:5500/index.html?p=Mr&n=Joefry%20Baratheon
+        const urlParams = new URLSearchParams(window.location.search);
+        const nama = urlParams.get('n') || '';
+        const pronoun = urlParams.get('p') || 'Mr/Mrs/Ms';
+        const namaContainer = document.querySelector('.hero h4 span');
+        namaContainer.innerText = `${pronoun} ${nama},`.replace(/ ,$/, ',');
+
+        document.querySelector('#nama').value = nama;
     </script>
 </body>
 
